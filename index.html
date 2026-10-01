@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Akshaya | Civil Engineering Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9fc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0f766e;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #0f766e;
+        }
+
+
+        /* HERO */
+
+        #home {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 8%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ecfdf5,
+                    #f8fafc
+                );
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-small {
+            color: #0f766e;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #0f766e;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            font-size: 18px;
+            color: #4b5563;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #0f766e;
+        }
+
+        .primary {
+            background: #0f766e;
+            color: white;
+        }
+
+        .secondary {
+            color: #0f766e;
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* COMMON SECTION */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #0f766e;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #4b5563;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+
+        /* SKILLS */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .skill h3 {
+            margin-bottom: 15px;
+            color: #0f766e;
+        }
+
+        .skill p {
+            color: #6b7280;
+        }
+
+
+        /* PROJECTS */
+
+        #projects {
+            background: #eefbf7;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .project-number {
+            color: #0f766e;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #6b7280;
+        }
+
+        .tags {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #0f766e;
+            font-weight: bold;
+        }
+
+
+        /* RESEARCH */
+
+        .research-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .research {
+            padding: 25px;
+            background: white;
+            border-left: 5px solid #0f766e;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+
+        .research h3 {
+            margin-bottom: 10px;
+        }
+
+        .research p {
+            color: #6b7280;
+        }
+
+
+        /* EDUCATION */
+
+        #education {
+            background: #eefbf7;
+        }
+
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+
+            background: white;
+            padding: 35px;
+
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .education-card h3 {
+            color: #0f766e;
+            font-size: 24px;
+        }
+
+        .education-card h4 {
+            margin: 10px 0;
+        }
+
+        .education-card p {
+            color: #6b7280;
+        }
+
+
+        /* ACHIEVEMENTS */
+
+        .achievements {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .achievement {
+            background: white;
+            padding: 18px 22px;
+            margin-bottom: 12px;
+
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .achievement span {
+            color: #0f766e;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+
+        /* CONTACT */
+
+        #contact {
+            text-align: center;
+            background: #0f766e;
+            color: white;
+        }
+
+        #contact .section-title {
+            color: white;
+        }
+
+        #contact .section-title span {
+            color: #d1fae5;
+        }
+
+        .contact-text {
+            max-width: 650px;
+            margin: auto;
+            color: #d1fae5;
+        }
+
+        .contact-links {
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            padding: 12px 22px;
+            background: white;
+            color: #0f766e;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #064e3b;
+            color: #d1fae5;
+            font-size: 14px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            AKSHAYA
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#research">Research</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                CIVIL ENGINEERING STUDENT
+            </div>
+
+            <h1>
+                Hi, I'm <span>Akshaya.</span>
+            </h1>
+
+            <h2>
+                Building ideas into practical engineering solutions.
+            </h2>
+
+            <p>
+                A Civil Engineering student passionate about
+                sustainable construction, infrastructure protection,
+                smart materials and emerging construction technologies.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    Explore My Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about">
+
+            <p>
+                I am a Civil Engineering student at
+                Sri Sairam Engineering College with an interest
+                in developing practical solutions for real-world
+                infrastructure challenges.
+            </p>
+
+            <p>
+                My interests include sustainable construction,
+                smart materials, water management, infrastructure
+                durability and emerging construction technologies.
+            </p>
+
+            <p>
+                Along with my core civil engineering knowledge,
+                I am developing skills in Python, additive manufacturing,
+                research, communication and technical presentation.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+
+                <h3>
+                    🏗 Civil Engineering
+                </h3>
+
+                <p>
+                    Construction Materials<br>
+                    Structural Engineering<br>
+                    Geotechnical Engineering<br>
+                    Fluid Mechanics<br>
+                    Environmental Engineering
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    ⚙ Additive Manufacturing
+                </h3>
+
+                <p>
+                    3D Printing Concepts<br>
+                    Digital Fabrication<br>
+                    Material Applications<br>
+                    Construction Innovation
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    💻 Programming
+                </h3>
+
+                <p>
+                    Python<br>
+                    Problem Solving<br>
+                    Basic Data Analysis<br>
+                    Computational Thinking
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    🔬 Research
+                </h3>
+
+                <p>
+                    Technical Research<br>
+                    Literature Review<br>
+                    Project Development<br>
+                    Technical Presentation
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Featured <span>Projects</span>
+        </h2>
+
+        <div class="projects-container">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    Gravity-Based Perimeter Drainage
+                    & Waterproofing System
+                </h3>
+
+                <p>
+                    A low-cost integrated drainage and waterproofing
+                    approach designed to reduce hydrostatic pressure
+                    caused by groundwater and accumulated water around
+                    underground structures and retaining systems.
+                </p>
+
+                <div class="tags">
+                    Drainage · Waterproofing · Hydrostatic Pressure
+                    · Sustainable Infrastructure
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Cement-Free Self-Sensing
+                    Polymer Composite
+                </h3>
+
+                <p>
+                    A research concept exploring polymer-based
+                    composite materials incorporating nano-scale
+                    materials for structural damage detection
+                    through changes in electrical resistance.
+                </p>
+
+                <div class="tags">
+                    Smart Materials · Structural Monitoring
+                    · Sustainable Construction
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Sustainable Construction
+                    Solutions
+                </h3>
+
+                <p>
+                    Exploration of innovative construction materials
+                    and techniques focused on sustainability,
+                    durability, resource efficiency and practical
+                    infrastructure applications.
+                </p>
+
+                <div class="tags">
+                    Sustainability · Materials · Infrastructure
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESEARCH -->
+
+    <section id="research">
+
+        <h2 class="section-title">
+            Research <span>Interests</span>
+        </h2>
+
+        <div class="research-container">
+
+
+            <div class="research">
+
+                <h3>
+                    Sustainable Construction
+                </h3>
+
+                <p>
+                    Low-carbon materials, waste utilization and
+                    environmentally responsible construction methods.
+                </p>
+
+            </div>
+
+
+            <div class="research">
+
+                <h3>
+                    Smart Materials
+                </h3>
+
+                <p>
+                    Materials capable of monitoring structural
+                    behaviour and detecting damage.
+                </p>
+
+            </div>
+
+
+            <div class="research">
+
+                <h3>
+                    Infrastructure Protection
+                </h3>
+
+                <p>
+                    Improving durability and resilience of
+                    civil infrastructure.
+                </p>
+
+            </div>
+
+
+            <div class="research">
+
+                <h3>
+                    Water Management
+                </h3>
+
+                <p>
+                    Drainage, groundwater management and
+                    water-related infrastructure problems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            <span>Education</span>
+        </h2>
+
+        <div class="education-card">
+
+            <h3>
+                Bachelor of Engineering
+            </h3>
+
+            <h4>
+                Civil Engineering
+            </h4>
+
+            <h4>
+                Sri Sairam Engineering College
+            </h4>
+
+            <p>
+                Developing knowledge in structural engineering,
+                construction materials, geotechnical engineering,
+                transportation, environmental engineering,
+                fluid mechanics and other core civil engineering subjects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements">
+
+        <h2 class="section-title">
+            Achievements & <span>Activities</span>
+        </h2>
+
+        <div class="achievements">
+
+            <div class="achievement">
+                <span>✓</span>
+                Developing skills in Additive Manufacturing
+            </div>
+
+            <div class="achievement">
+                <span>✓</span>
+                Working on innovative Civil Engineering projects
+            </div>
+
+            <div class="achievement">
+                <span>✓</span>
+                Developing Python programming skills
+            </div>
+
+            <div class="achievement">
+                <span>✓</span>
+                Participating in technical presentations and competitions
+            </div>
+
+            <div class="achievement">
+                <span>✓</span>
+                Exploring sustainable and smart construction technologies
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <p class="contact-text">
+
+            I am interested in connecting with engineers,
+            researchers and professionals working in civil engineering,
+            sustainable infrastructure and emerging construction technologies.
+
+        </p>
+
+
+        <div class="contact-links">
+
+            <a href="mailto:YOUR_EMAIL@gmail.com">
+                Email
+            </a>
+
+            <a href="https://www.linkedin.com/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/"
+               target="_blank">
+                GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Akshaya | Civil Engineering Portfolio
+
+    </footer>
+
+
+</body>
+
+</html>
